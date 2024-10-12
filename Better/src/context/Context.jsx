@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import run from "../config/gemini";
+import { createContext, useState } from "react"
+import run from "../config/gemini"
 
 export const Context = createContext();
 const ContextProvider = (props) => {
@@ -54,7 +54,7 @@ const ContextProvider = (props) => {
     setLoading(false);
     setInput("");
   };
-  //   onSent("What is react js");
+ 
   const contextValue = {
     previousPrompt,
     setpreviousPrompt,
