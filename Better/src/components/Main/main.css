@@ -1,0 +1,236 @@
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #202020;
+    color: #e5e5e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .main-container {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Navbar */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 15px 20px;
+    color: #ffffff;
+    background-color: #4a4a52;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .nav img {
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .nav img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Greeting Section */
+  .greet {
+    margin: 30px 0;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    background: linear-gradient(45deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .greet span {
+    display: block;
+    font-size: 24px;
+    color: #b0b0b0;
+    font-weight: 400;
+  }
+  
+  /* Card Layout */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .card {
+    padding: 20px;
+    background-color: #38383c;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    background-color: #353545;
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 35px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px;
+    background-color: #38383c;
+    border-radius: 50%;
+  }
+  
+  .card p {
+    margin-top: 50px;
+    font-size: 18px;
+    color: #c4c4c4;
+  }
+  
+  /* Bottom Info Section */
+  .main-bottom {
+    width: 100%;
+    max-width: 900px;
+    padding: 15px 20px;
+    background-color: #484850;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #b0b0b0;
+    margin-top: 20px;
+  }
+  
+  /* Search Box */
+  .search-box {
+    display: flex;
+    align-items: center;
+    background-color: #5b5b65;
+    padding: 10px 15px;
+    border-radius: 50px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .search-box img {
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  .search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #e5e5e7;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  /* Results Section */
+/* Results Section */
+.result {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+    background-color: #5a5a69;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Adjusted Gemini Icon Size */
+.result-title img,
+.result img {
+  width: 24px; /* Reduced width for smaller appearance */
+  height: 24px; /* Set height to match width */
+  border-radius: 50%;
+}
+
+  
+  .result-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #d5d5d5;
+  }
+  
+  .result-data p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+ /* Loader Animation */
+.loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .loader hr {
+    width: 60%;
+    height: 8px; /* Reduced height for a smaller appearance */
+    border-radius: 4px;
+    border: none;
+    background: linear-gradient(to right, #4b90ff, #ff5546, #4b90ff);
+    background-size: 200% 100%;
+    animation: loader 1.5s infinite linear;
+  }
+  
+  @keyframes loader {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .greet {
+      font-size: 32px;
+    }
+  
+    .cards {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+  
+    .search-box {
+      padding: 8px;
+    }
+  
+    .main-bottom {
+      padding: 10px;
+    }
+  
+    .result {
+      padding: 15px;
+    }
+  }
+  
