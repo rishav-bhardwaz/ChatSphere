@@ -15,7 +15,7 @@ const Main = () => {
   } = useContext(Context);
 
   const [history, setHistory] = useState([]);
-  const [showHistory, setShowHistory] = useState(false); // State to control visibility
+  const [showHistory, setShowHistory] = useState(false);
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -28,17 +28,16 @@ const Main = () => {
       onSent();
       const newEntry = { prompt: input, result: resultData };
       setHistory((prevHistory) => [...prevHistory, newEntry]);
-      setInput(""); // Reset the input field
+      setInput("");
     }
   };
 
-  // Load history from localStorage on component mount
+ 
   useEffect(() => {
     const savedHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
     setHistory(savedHistory);
   }, []);
 
-  // Save to localStorage whenever history changes
   useEffect(() => {
     localStorage.setItem("searchHistory", JSON.stringify(history));
   }, [history]);
@@ -58,7 +57,7 @@ const Main = () => {
               </p>
               <p>How Can I Help you today?</p>
             </div>
-            {/* Your existing cards code */}
+            {/* Cards Code alignment with the animation*/}
           </>
         ) : (
           <div className="result">
