@@ -3,11 +3,11 @@
     left: 0;               /* Positions the sidebar on the left */
     top: 0;                /* Aligns it to the top */
     min-height: 100vh;
-    width: 250px;          /* Sets a fixed width for the sidebar */
+    width: 80px;          /* Sets a fixed width for the sidebar */
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #f0f4f9;
+    background-color: #48484f;
     padding: 25px 15px;
     z-index: 10;           /* Ensures it stays on top of other content */
   }
