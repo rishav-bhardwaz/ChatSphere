@@ -1,8 +1,6 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
-import "./main.css";
-
 const Main = () => {
   const {
     onSent,
@@ -45,7 +43,7 @@ const Main = () => {
   return (
     <div className="main">
       <div className="nav">
-        <p>Gemini</p>
+        <p>ChatSphere</p>
         <img src={assets.user_icon} alt="" />
       </div>
       <div className="main-container">
@@ -53,11 +51,10 @@ const Main = () => {
           <>
             <div className="greet">
               <p>
-                <span>Hello, Dev</span>
+                <span>Hello, Boss</span>
               </p>
               <p>How Can I Help you today?</p>
             </div>
-            {/* Cards Code alignment with the animation*/}
           </>
         ) : (
           <div className="result">
@@ -80,12 +77,10 @@ const Main = () => {
           </div>
         )}
 
-        {/* Button to toggle search history */}
         <button className="toggle-history-btn" onClick={() => setShowHistory(!showHistory)}>
           {showHistory ? "Hide Search History" : "Show Search History"}
         </button>
 
-        {/* Conditionally render history based on showHistory state */}
         {showHistory && (
           <div className="history">
             <h3>Search History</h3>
@@ -116,7 +111,7 @@ const Main = () => {
             </div>
           </div>
           <div className="bottom-info">
-            Gemini may display inaccurate info, including about people, so
+            ChatSphere may display inaccurate info, including about people, so
             double-check its response. Your privacy and Gemini Apps
           </div>
         </div>

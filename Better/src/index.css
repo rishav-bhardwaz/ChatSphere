@@ -1,68 +1,108 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.main {
+  @apply min-h-screen bg-gray-50 p-4 md:p-8;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.nav {
+  @apply flex items-center justify-between bg-white rounded-lg p-4 shadow-sm mb-8;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.nav p {
+  @apply text-2xl font-semibold text-indigo-600;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.nav img {
+  @apply w-10 h-10 rounded-full cursor-pointer;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.main-container {
+  @apply max-w-6xl mx-auto;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.greet {
+  @apply text-center mb-12;
+}
+
+.greet p:first-child span {
+  @apply text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+.greet p:last-child {
+  @apply text-xl text-gray-600 mt-2;
+}
+
+.cards {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 mb-12;
+}
+
+.card {
+  @apply bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer;
+  @apply flex items-start justify-between;
+}
+
+.card p {
+  @apply text-gray-700 flex-1 mr-4;
+}
+
+.card img {
+  @apply w-8 h-8 text-indigo-600;
+}
+
+.result {
+  @apply bg-white rounded-xl shadow-sm p-6 mb-8;
+}
+
+.result-title {
+  @apply flex items-center gap-4 mb-6 pb-4 border-b;
+}
+
+.result-title img {
+  @apply w-10 h-10 rounded-full;
+}
+
+.result-title p {
+  @apply text-lg font-medium text-gray-800;
+}
+
+.result-data {
+  @apply flex gap-4;
+}
+
+.result-data img {
+  @apply w-10 h-10 rounded-full;
+}
+
+.result-data p {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.loader {
+  @apply flex gap-2;
+}
+
+.loader hr {
+  @apply w-2 h-2 bg-indigo-600 rounded-full;
+}
+
+.search-box {
+  @apply bg-white rounded-lg shadow-sm p-4 flex items-center gap-4;
+}
+
+.search-box input {
+  @apply flex-1 outline-none text-gray-700;
+}
+
+.search-box div {
+  @apply flex items-center gap-4;
+}
+
+.search-box img {
+  @apply w-6 h-6 cursor-pointer text-gray-500 hover:text-indigo-600 transition-colors;
+}
+
+.bottom-info {
+  @apply text-center text-sm text-gray-500 mt-4;
 }
