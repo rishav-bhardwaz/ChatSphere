@@ -53,7 +53,7 @@ const Main = () => {
         />
       </motion.div>
 
-      <div className="main-container">
+      <div className="main-container w-full h-full flex flex-col">
         <AnimatePresence mode="wait">
           {!showResult ? (
             <motion.div

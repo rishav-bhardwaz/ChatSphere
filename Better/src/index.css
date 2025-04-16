@@ -19,7 +19,7 @@
 }
 
 .main-container {
-  @apply max-w-6xl mx-auto;
+  @apply w-full;
 }
 
 .greet {
