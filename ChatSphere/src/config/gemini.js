@@ -1,9 +1,10 @@
-import {
-  GoogleGenerativeAI,
-} from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
+if (!apiKey) {
+  throw new Error("VITE_GEMINI_API_KEY is not defined in .env");
+}
 
-const apiKey = "AIzaSyAXiPZ5enT3o1VF_YeN2qnFgR2AtmVvtnI";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
@@ -26,7 +27,7 @@ async function run(prompt) {
 
   const result = await chatSession.sendMessage(prompt);
   const response = result.response;
-  console.log(result.response.text());
+  console.log(response.text());
   return response.text();
 }
 

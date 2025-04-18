@@ -52,8 +52,7 @@ const Main = () => {
           whileTap={{ scale: 0.9 }}
         />
       </motion.div>
-
-      <div className="main-container w-full h-full flex flex-col">
+      <div className="main-container w-full max-w-5xl mx-auto h-full flex flex-col px-4">
         <AnimatePresence mode="wait">
           {!showResult ? (
             <motion.div
@@ -73,7 +72,7 @@ const Main = () => {
                 <p>How Can I Help you today?</p>
               </motion.div>
               
-              <div className="cards">
+              <div className="cards grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                 {[
                   {
                     text: "Suggest beautiful places to see on an upcoming road trip",
@@ -125,7 +124,7 @@ const Main = () => {
                 transition={{ type: "spring" }}
               >
                 <img src={assets.user_icon} alt="" />
-                <p>{recentPrompt}</p>
+                <p className="break-words">{recentPrompt}</p>
               </motion.div>
               <motion.div 
                 className="result-data"
@@ -149,6 +148,7 @@ const Main = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
+                    className="break-words"
                     dangerouslySetInnerHTML={{ __html: resultData }}
                   />
                 )}
@@ -158,7 +158,7 @@ const Main = () => {
         </AnimatePresence>
 
         <motion.div 
-          className="main-bottom"
+          className="main-bottom mt-4"
           initial={{ y: 50 }}
           animate={{ y: 0 }}
           transition={{ type: "spring", stiffness: 100 }}
@@ -207,8 +207,8 @@ const Main = () => {
             animate={{ opacity: 0.7 }}
             transition={{ delay: 0.5 }}
           >
-            Gemini may display inaccurate info, including about people, so
-            double-check its response. Your privacy and Gemini Apps
+            Chat Sphere may display inaccurate info, including about people, so
+            double-check its response.
           </motion.div>
         </motion.div>
       </div>
